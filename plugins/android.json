@@ -1,0 +1,96 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Contacts\"><param name=\"android-package\" value=\"org.apache.cordova.contacts.ContactManager\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Accelerometer\"><param name=\"android-package\" value=\"org.apache.cordova.devicemotion.AccelListener\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"LaunchMyApp\"><param name=\"android-package\" value=\"nl.xservices.plugins.LaunchMyApp\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_CONTACTS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/*/application/activity": [
+                        {
+                            "xml": "<intent-filter><data android:scheme=\"donghang\" /><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /></intent-filter>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "org.apache.cordova.contacts": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "nl.x-services.plugins.launchmyapp": {
+            "URL_SCHEME": "donghang",
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        }
+    },
+    "dependent_plugins": {}
+}

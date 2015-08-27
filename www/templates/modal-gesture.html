@@ -1,0 +1,11 @@
+<ion-modal-view class="ion-nifty-modal">
+    <div class="ion-modal-content-custom">
+        <ion-content class="padding">
+            <button class="button button-block button-positive" ng-click="getCurrentAcceleration()"> 데이터 모으기 </button>
+            <button class="button button-block button-assertive" ng-click="stopAccelerometerData()"> 수집 중단</button>
+            <h4>{{accel.x}}</h4>
+            <h4>{{accel.y}}</h4>
+            <h4>{{accel.z}}</h4>
+        </ion-content>
+    </div>
+</ion-modal-view>

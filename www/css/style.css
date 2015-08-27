@@ -1,0 +1,268 @@
+/* Empty. Add your own CSS if you like */
+
+/* Custom CSS */
+
+.nanum-gothic {
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 18px;
+}
+
+.nav-title-pink {
+    background-color: #D45A75 !important;
+    font-family: 'Noto Sans Korean', sans-serif !important;
+}
+
+.bar .title {
+    font-weight: 400 !important;
+    font-size: 18px !important;
+}
+
+.custom-pink {
+    background-color: #D45A75 !important;
+    font-family: 'Nanum Brush Script', cursive;
+}
+
+.nanum-brush {
+    font-family: 'Nanum Brush Script', cursive;
+    font-size : 20px;
+}
+
+.noto {
+    font-family: 'Noto Sans Korean', sans-serif;
+}
+
+.nanum-brush-only {
+    font-family: 'Nanum Brush Script', cursive;
+}
+
+
+h1, h2, h3, h4, h5, p {
+    font-family: 'Noto Sans Korean', sans-serif;
+    font-weight: normal !important;
+    white-space: normal !important;
+}
+.title {
+    font-size: 24px !important;
+}
+
+.pink-button {
+    background-color: #D45A75;
+    font-family: 'Noto Sans Korean', sans-serif;
+}
+
+.item p{
+    color: #000000 !important;
+}
+
+.divider {
+    border-top: solid 1px #ccc;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 16px;
+}
+
+.list-divider {
+  color: black !important;
+  font-family: 'Nanum Brush Script', cursive;
+  font-size: 20px !important;
+  font-weight: normal !important;
+  background-color: #f2f2f2;
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: solid 1px rgba(0,0,0,.12) !important;
+  min-height: 0px !important;
+}
+
+.img-avatar {
+    border-radius: 50%;
+}
+
+.dh-avatar {
+    border-radius: 50%;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.dh-list-avatar {
+    border-radius: 50%;
+    max-height: 40px;
+    max-width: 40px;
+}
+
+.item-no-margin-bottom {
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+    min-height: 0px !important;
+}
+
+/* Menu */
+
+.menu .bar.bar-header.expanded {
+    background-image: url('../img/material-graphite.jpg');
+    background-size: 120%;
+    background-position: 0%;
+    transition: all .5s ease-in-out;
+}
+
+.menu.menu-left * {
+    font-weight: bold;
+}
+
+.item-radio input:checked ~ .item-content {
+    background: transparent;
+}
+
+.menu-open .ion-navicon {
+    transform: rotate(-360deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-open .ion-navicon:before {
+    content: "\f2ca";
+}
+
+.item.item-radio .radio-icon {
+    opacity: 1;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.item.item-radio:active .radio-icon {
+    opacity: 0;
+    transform: scale(1.6);
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.directions.button-bar {
+    margin: 0 auto;
+    width: 33.333%;
+}
+
+.directions.button-bar button {
+    line-height: 26px;
+}
+
+.ion-arrow-right-c.top-left:before {
+    transform: rotate(-135deg);
+}
+
+.ion-arrow-right-c.top-right:before {
+    transform: rotate(-45deg);
+}
+
+.ion-arrow-right-c.bottom-left:before {
+    transform: rotate(-225deg);
+}
+
+.ion-arrow-right-c.bottom-right:before {
+    transform: rotate(45deg);
+}
+
+/** ion md input **/
+.item-md-label input {
+    background-color: transparent !important;
+    font-family: 'Noto Sans Korean', sans-serif !important;
+    letter-spacing: normal;
+}
+
+
+/* modal */
+.custom-ion-nifty-modal {
+  width: 90%;
+  min-height: 0 !important;
+  height: 350px !important;
+  top: 25%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  background-color: transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/** image view **/
+.image-list-thumb {
+    padding: 2px 2px 2px 2px;
+    height: 100px;
+}
+
+.image-modal {
+    width: 100% !important;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.transparent {
+    background: transparent !important;
+}
+
+.fullscreen-image {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.centerme {
+    margin: 0 auto;
+    width: 100%;
+    height:100%;
+}
+
+.fullscreen-player {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.box {
+    border:1px solid #ccc;
+    padding:5px;
+    height:151px;
+    width:195px;
+}
+.overlay {
+    background:rgba(0, 0, 0, .75);
+    text-align:center;
+    opacity:0;
+    width:100%;height:100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.box:hover {
+    border:1px solid #555;
+    border-radius:5px;
+}
+.box:hover .overlay {
+    opacity:1;
+}
+.search {
+    position:relative;
+    top:60px;
+}

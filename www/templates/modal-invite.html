@@ -1,0 +1,59 @@
+<ion-modal-view class="ion-nifty-modal" style="height:90% !important; top:5% !important;">
+    <div class="ion-modal-content-custom">
+        <button class="button button-clear button-dark ion-close-round no-padding" style="float: right;" ng-click="closeModal();"></button>
+        <ion-content style="top: 25px;">
+            <div class="col padding">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="search" placeholder="검색" ng-model="searchQuery"/>
+                </label>
+
+                <ion-list>
+                    <ion-item  ng-repeat="contact in contacts | filter:searchQuery | limitTo: 10">
+                        <div class="row no-padding" >
+                            <div class="col col-25 no-padding" style="min-height: 0px;">
+                                <h2>{{contact.displayName || contact.name.givenName}}</h2>
+                            </div>
+                            <div class="col col-50 no-padding" style="text-align: center; min-height: 0px;">
+                                <h2 style="color: dimgrey;">{{contact.phoneNumbers[0].value}}</h2>
+                            </div>
+                            <div class="col no-padding">
+                                <button ng-show="confirmedContact.length < 1" style="float:right; color: black;" class="button-clear icon-left ion-ios-plus-empty" ng-click="addContact(contact)">&nbsp; 추가</button>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+
+            </div>
+        </ion-content>
+        <div class="tabs tabs-light " style="height:auto;">
+            <div class="col">
+                <div class="row no-padding" style="padding-left: 16px;" ng-repeat="contact in confirmedContact">
+                    <div class="col col-20 col-center no-padding">
+                        <button class="button button-clear ion-close-round" style="min-width: 0px; padding-left: 0px; width: 10px !important;" ng-click="cancelContact(contact)"></button>
+                    </div>
+                    <div class="col col-33 col-center no-padding">
+                        <div class="row no-padding">
+                            <i class="ion-person" style="font-size: 25px;"></i>&nbsp;&nbsp;
+                            <p style="margin-bottom: 0px;">{{contact.name}}</p>
+                        </div>
+                    </div>
+                    <div class="col col-50 col-center  no-padding">
+                        <div class="row no-padding">
+                            <i class="ion-android-phone-portrait" style="font-size: 25px;"></i>&nbsp;&nbsp;
+                            <p style="margin-bottom: 0px;">{{contact.phoneNumber}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="button button-flat button-full pink-button" ng-disabled="confirmedContact.length < 1" ng-click="invite()">초대</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-modal-view>
+
+
+<!--
+<button class="button button-flat button-full button-calm" ng-disabled="confirmedContact.length > 1" ng-click="confirmSelectedContact()">추가</button>
+-->

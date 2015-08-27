@@ -1,0 +1,175 @@
+<ion-view view-title="세월호 추모">
+    <ion-pane>
+        <ion-tabs class="tabs-icon-only">
+
+            <!-- Tab Home -->
+            <ion-tab title="Home" icon="ion-home">
+                <ion-nav-view>
+                    <div layout="column" style="height: 100%;" layout-align="center" ng-hide="campaignInfo">
+                        <div layout="row" layout-align="center" ng-hide="false" style="padding-top:50px;">
+                            <p>캠페인 정보을 불러오는 중 입니다.</p>
+                        </div>
+                        <div layout="row" layout-align="center" ng-hide="false" style="padding-top:50px;">
+                            <ion-spinner></ion-spinner>
+                        </div>
+                    </div>
+                    <ion-content ng-show="campaignInfo">
+                            <div class="row" style="padding-left: 25px; padding-right: 25px; padding-top: 5px;">
+                                <img ng-src="{{campaignInfo.rep_picture}}" style="width:100%; height:200px;">
+                            </div>
+                            <div class="row" style="padding-top: 20px;">
+                                  <h2 class="nanum-brush" style="font-size: 40px; width:100%; text-align: center; vertical-align: middle;">{{campaignInfo.name}}</h2>
+                            </div>
+                            <div class="row">
+                                  <i style="width: 100%; text-align: center; vertical-align: middle;"><i style="color: gray;">{{campaignInfo.publish_date}}</i>&nbsp; by&nbsp; {{campaignInfo.publisher}}</i>
+                            </div>
+                            <div class="row" layout-align="center" style="padding-top: 15px; padding-bottom:15px;">
+                                <button class="button button-flat nav-title-pink" style="font-size: 16px; font-weight: 400;" ng-click="openInvite('slide-in-up')">동행 초대하기</button>
+                            </div>
+                            <div class="row" style="padding-left: 25px; padding-bottom: 0px;">
+                                <div class="col" style="font-size:13px; color: #D45A75;">
+                                    예정된 동행이 없습니다.
+                                </div>
+                            </div>
+                            <div class="row" style="padding-left: 25px; padding-right: 25px;">
+                                <div class="col" style="text-align: justify; text-justify: inter-word">
+                                  <p style="margin-bottom: 0px;">{{campaignInfo.campaign_detail}}</p>
+                                </div>
+                            </div>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+
+             <!-- Tab Donghang List -->
+            <ion-tab title="Donghang List" icon="ion-bookmark">
+                <ion-nav-view>
+                    <ion-content>
+                        <ion-list>
+                            <div class="item item-divider nanum-brush" style="font-weight: normal; color:black; font-size: 18px;">예정된 동행</div>
+                            <ion-item ng-repeat="active_campaign in active_list">
+                                <div layout="row" layout-align="start center" class="row no-padding">
+                                    <i class="icon ion-clock balanced-900"></i>
+                                    <div class="col no-padding col-offset-10" layout-align="center center" style="margin-left: 13px;">
+                                        <i style="font-size: 15px; color: black;">{{active_campaign.participants[0]}}&nbsp;{{active_campaign.participants[1]}}</i><br/>
+                                        <i style="font-size: 13px; color: gray;">{{active_campaign.time | date: 'shortTime'}}</i>
+                                    </div>
+                                    <div class="col no-padding" layout-align="center">
+                                        <div layout="row" layout-align="center center">
+                                            <i style="font-size: 10px; color: grey; position: absolute; top:0; margin-left:20px;" class="nanum-gothic">{{active_campaign.time | date: 'shortDate'}}</i>
+                                            <div class="col no-padding" style="text-align:center;">
+                                                <i style="font-size: 25px;">{{active_campaign.time | date: 'shortTime'}}</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-10 no-padding" layout-align="end center">
+                                        <button class="button-clear" ng-click="testClick()" ><i class="icon ion-more" style="float:right;"></i></button>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <div class="item item-divider nanum-brush" style="font-weight: normal; color: black; font-size: 18px;">초대받은 동행</div>
+                            <ion-item ng-repeat="from_campaign in inactive_from_list">
+                                <div layout="row" layout-align="start center" class="row no-padding">
+                                    <i class="icon ion-clock" style="color: gray;"></i>
+                                    <div class="col no-padding" layout-align="center center" style="margin-left: 13px;">
+                                        <i style="font-size: 15px; color: black;">{{from_campaign.participants[0]}}&nbsp;{{from_campaign.participants[1]}}</i><br/>
+                                        <i style="font-size: 13px; color: gray;">미정</i>
+                                    </div>
+                                    <div class="col no-padding" layout-align="center">
+                                        <div layout="row" layout-align="center center">
+                                            <i style="font-size: 13px; color:black">{{from_campaign.publisher}}님의&nbsp;&nbsp;</i>
+                                            <i style="font-size: 13px;" class="balanced-900">초대</i>
+                                        </div>
+                                        <div layout="row" layout-align="center center">
+                                            <i style="font-size: 13px; color:black">{{from_campaign.participants[1]}}&nbsp;&nbsp;</i>
+                                            <i style="font-size: 13px; color:grey">대기중</i>
+                                       </div>
+                                    </div>
+                                    <div class="col col-10 no-padding" layout-align="end center">
+                                        <button class="button-clear" style="color: #D45A75;" >수락</button>
+                                    </div>
+                                </div>
+                            </ion-item>
+                            <div class="item item-divider nanum-brush" style="font-weight: normal; color: black; font-size: 18px;">초대한 동행</div>
+                            <ion-item ng-repeat="by_campaign in inactive_by_list">
+                                <div layout="row" layout-align="start center">
+                                    <i class="icon ion-clock" style="color: gray;"></i>
+                                    <div class="col no-padding" layout-align="center center" style="margin-left: 13px;">
+                                        <i style="font-size: 15px; color: black;">{{by_campaign.participants[0]}}&nbsp;{{by_campaign.participants[1]}}</i><br/>
+                                        <i style="font-size: 13px; color: gray;">미정</i>
+                                    </div>
+                                    <div class="col no-padding" layout-align="center">
+                                        <div layout="row" layout-align="center center">
+                                            <i style="font-size: 13px; color:black">{{by_campaign.participants[0]}}&nbsp;&nbsp;</i>
+                                            <i style="font-size: 13px; color:grey" ng-hide="by_campaign.participants_status[0]">대기중</i>
+                                            <i style="font-size: 13px;" class="balanced-900" ng-show="by_campaign.participants_status[0]">수락함</i>
+                                        </div>
+
+                                        <div layout="row" layout-align="center center">
+                                            <i style="font-size: 13px; color:black">{{by_campaign.participants[1]}}&nbsp;&nbsp;</i>
+                                            <i style="font-size: 13px; color:grey" ng-hide="by_campaign.participants_status[1]">대기중</i>
+                                            <i style="font-size: 13px;" class="balanced-900" ng-show="by_campaign.participants_status[1]">수락함</i>
+                                       </div>
+                                    </div>
+                                    <div class="col col-10 no-padding" layout-align="end center">
+                                         <button class="button-clear" ng-click="testClick()" ><i class="icon ion-more" style="float:right;"></i></button>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+
+            <!-- Tab Map -->
+            <ion-tab icon="ion-map">
+                <ion-nav-view>
+                        <mapbox height="100%" style="top:46px; bottom:49px; position:absolute;" class="dark" map-id="yuhwan.8ffe0019" height="250" lat="36.371" lng="127.361" zoom="12">
+                            <marker lat="36.371" lng="127.361" size="large" color="#39cccc" symbol="grocery">
+                            </marker>
+                        </mapbox>
+                </ion-nav-view>
+            </ion-tab>
+        </ion-tabs>
+    </ion-pane>
+</ion-view>
+
+
+
+<!-- Tab Join
+<ion-tab icon="ion-heart" class="assertive">
+    <ion-nav-view>
+        <ion-content>
+            <ion-item>
+                <div class="row">
+                    <p>2명의 친구를 추가한 후, 새로운 동행을 만드세요.</p>
+                </div>
+                <div class="col">
+                    <div class="row" ng-repeat="contact in confirmedContact">
+                        <div class="col col-20 col-center">
+                            <button class="button button-clear ion-close-round" style="min-width: 0px; padding-left: 0px; width: 10px !important;" ng-click="cancelContact(contact)"></button>
+                        </div>
+                        <div class="col col-33 col-center">
+                            <div class="row">
+                                <i class="ion-person" style="font-size: 25px;"></i>&nbsp;&nbsp;
+                                <p>{{contact.name}}</p>
+                            </div>
+                        </div>
+                        <div class="col col-50 col-center">
+                            <div class="row">
+                                <i class="ion-android-phone-portrait" style="font-size: 25px;"></i>&nbsp;&nbsp;
+                                <p>{{contact.phoneNumber}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="button button-clear icon-left ion-plus-round button-dark nanum-brush" ng-click="openModal('jelly')" ng-disabled="confirmedContact.length > 1">&nbsp; 친구추가 </button>
+                    <button class="button button-clear icon-left ion-paper-airplane button-dark nanum-brush" ng-disabled="confirmedContact.length < 2" >&nbsp; 동행만들기 </button>
+                </div>
+            </ion-item>
+            <button class="button button-block button-calm" ng-click="openGesture('jelly')"> 제스처 시작 </button>
+        </ion-content>
+    </ion-nav-view>
+</ion-tab>
+-->

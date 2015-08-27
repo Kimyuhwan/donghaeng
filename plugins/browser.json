@@ -1,0 +1,48 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"browser-package\" value=\"Device\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "org.apache.cordova.contacts": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        },
+        "nl.x-services.plugins.launchmyapp": {
+            "URL_SCHEME": "donghang",
+            "PACKAGE_NAME": "com.ionicframework.example742105"
+        }
+    },
+    "dependent_plugins": {}
+}

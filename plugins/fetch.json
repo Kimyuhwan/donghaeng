@@ -1,0 +1,69 @@
+{
+    "cordova-plugin-device": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-splashscreen"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.ionic.keyboard": {
+        "source": {
+            "type": "registry",
+            "id": "com.ionic.keyboard"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.contacts": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.contacts"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device-motion": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device-motion"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "nl.x-services.plugins.launchmyapp": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {
+            "URL_SCHEME": "donghang"
+        }
+    }
+}

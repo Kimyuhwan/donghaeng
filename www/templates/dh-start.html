@@ -1,0 +1,75 @@
+<ion-view style="background-color: #D45A75" >
+
+    <div layout="column" layout-align="center center" style="height:100%; width:100%;">
+        <h2 class="nanum-brush" style="color: white; font-size: 50px;" ng-hide="isValid && isConfirmed">동행</h2>
+
+        <!-- During waiting for invitation code check -->
+        <div class="column" layout-align="center center" style="width:80%; margin-top: 40px; margin-bottom: 25px; " ng-show="!isValid && !isConfirmed">
+            <div class="row" style="padding-bottom: 0px; font-size: 16px; padding-top:20px;">
+                <div class="col no-padding"></div>
+                <div class="col col-80 no-padding" style="color: white; line-height: 150%; text-align: center">
+                    <p>초대장을 확인하고 있습니다<br/> 잠시만 기다려주세요 ...</p>
+                </div>
+                <div class="col no-padding"></div>
+            </div>
+        </div>
+        <!-- Invitation Code is Valid -->
+        <div class="column" layout-align="center center" style="width:80%; margin-top: 40px; margin-bottom: 25px; " ng-show="isValid && !isConfirmed">
+            <div class="row" style="padding-bottom: 0px; font-size: 16px; padding-top:20px;">
+                <div class="col no-padding"></div>
+                <div class="col col-80 no-padding" style="color: white; line-height: 150%;">
+                    <p><b>{{user_nick_name}}님</b> 환영합니다.<br/><b>{{sender_nick_name}}</b>으로부터 초대를 받아, <br/> 동행에 들어온것이 맞으십니까?</p>
+                </div>
+                <div class="col no-padding"></div>
+            </div>
+            <div class="row" style="padding-top: 10px;">
+                <div class="col no-padding"></div>
+                <div class="col col-90 no-padding" style="color: white;">
+                    <button class="button button-clear icon-left ion-ios-checkmark-empty" style="float: right; font-size: 15px; color: white;" ng-click="confirm()">확인</button>
+                </div>
+                <div class="col no-padding"></div>
+            </div>
+        </div>
+        <!-- Sign up form -->
+
+        <div class="column" layout-align="center center" style="width:80%; margin-top: 40px; margin-bottom: 25px; " ng-show="isValid && isConfirmed">
+            <form name="donghangForm" novalidate style="height:100%; width:100%;" >
+                <div layout="row" layout-align="center center" style="width:100%; padding-bottom: 0px;">
+                    <ion-md-input-disabled name="fieldId" ng-model="user_id" placeholder="PHONE NUMBER" required="true" style="width:60%; color: gray !important;"></ion-md-input-disabled>
+                </div>
+
+                <div layout="row" layout-align="center center" style="width:100%; padding-bottom: 10px;">
+                    <ion-md-input name="fieldNickName" ng-model="user_nick_name" style="width:60%; color: white;" placeholder="NAME" required="true"></ion-md-input>
+                </div>
+
+                <div layout="row" layout-align="center center" style="width:100%; padding-bottom: 10px;">
+                    <ion-md-input name="fieldPassword" ng-model="user_password" type="password" style="width:60%; color: white;" placeholder="PASSWORD" required="true"></ion-md-input>
+                </div>
+                <div ng-show="result_valid">
+                    <br/><br/>
+                </div>
+                <div layout="column" ng-hide="result_valid" layout-align="center center">
+                    <br/>
+                    <p style="font-size: 13px; color: white;">{{required_message}}</p>
+                    <p style="font-size: 13px; color: white;">{{phonenumber_message}}</p>
+                </div>
+                <div layout="row" layout-align="center center" style="width:100%;">
+                    <button class="button button-flat noto" style="width:60%; font-size:18px;" ng-click="submit()">가입하기</button>
+                </div>
+            </form>
+       </div>
+
+
+
+    </div>
+
+    <div class="tabs no-border no-padding" style="height:auto; background-color: transparent; background-image: none; padding-bottom:20px;">
+        <div class="col no-padding">
+            <div layout="row" layout-align="center">
+                <button class="button button-flat icon-left ion-wand" style="font-size:13px;" ng-click="signIn();">이미 회원이시면 기존 아이디로 로그인</button>
+            </div>
+
+        </div>
+    </div>
+
+</ion-view>
