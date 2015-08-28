@@ -316,7 +316,6 @@ angular.module('starter.controllers', [])
         //window.PKVideoThumbnail.createThumbnail ( src , $scope.targetThumbnailPath, true, true );
     }
 
-
     $scope.playVideo = function(src) {
         $scope.clipSrc = src;
         $scope.showModal('templates/video-popover.html');

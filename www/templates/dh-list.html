@@ -10,7 +10,6 @@
 
   <ion-content ng-show="campaignList" >
     <ion-list>
-        <div>{{campaignList}}</div>
         <div ng-repeat="campaign_info in campaignList">
             <ion-item>
                 <div class="col no-padding">
@@ -25,15 +24,16 @@
                         <div class="col">
                         </div>
                     </div>
-                    <div>{{campaign_info.rep_picture==null}}</div>
                     <div ng-show=campaign_info.rep_picture!=null class="row" style="padding-top: 10px;">
                         <img ng-src="{{campaign_info.rep_picture}}" style="width: 100%; height: 100%;" ng-click="showImages(campaign_info.rep_picture)">
 
                     </div>
-                    <div ng-init="thumbnail(campaign_info.rep_video)" ng-show=campaign_info.rep_picture==null class="row" style="padding-top: 10px;">
+                    <div ng-show=campaign_info.rep_picture==null class="row" style="padding-top: 10px;">
+                        <!--
+                        ng-init="thumbnail(campaign_info.rep_video)"
+                        -->
                         <img ng-src="img/uian_rep_img.jpg" style="width: 100%; height: 100%;" ng-click="playVideo(campaign_info.rep_video)">
                     </div>
-                    {{campaign_info}}
                 </div>
 
             </ion-item>
