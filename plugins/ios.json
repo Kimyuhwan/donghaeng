@@ -13,11 +13,19 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"PushbotsPlugin\"><param name=\"ios-package\" value=\"PushbotsPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Accelerometer\"><param name=\"ios-package\" value=\"CDVAccelerometer\" /></feature>",
                             "count": 1
                         },
                         {
@@ -27,16 +35,42 @@
                         {
                             "xml": "<feature name=\"Contacts\"><param name=\"ios-package\" value=\"CDVContacts\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Accelerometer\"><param name=\"ios-package\" value=\"CDVAccelerometer\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
             },
             "framework": {
                 "parents": {
+                    "CoreLocation.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "MobileCoreServices.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "CoreTelephony.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "CoreMotion.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
                     "CoreGraphics.framework": [
                         {
                             "xml": false,
@@ -52,12 +86,6 @@
                     "AddressBookUI.framework": [
                         {
                             "xml": true,
-                            "count": 1
-                        }
-                    ],
-                    "CoreMotion.framework": [
-                        {
-                            "xml": false,
                             "count": 1
                         }
                     ]
@@ -76,30 +104,36 @@
         }
     },
     "installed_plugins": {
+        "android.support.v4": {
+            "PACKAGE_NAME": "com.nclab.donghaeng"
+        },
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.nclab.donghaeng"
+        },
+        "com.pushbots.push": {
+            "PACKAGE_NAME": "com.nclab.donghaeng"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.nclab.donghaeng"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "org.apache.cordova.contacts": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.nclab.donghaeng"
         },
         "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.nclab.donghaeng"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.nclab.donghaeng"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.nclab.donghaeng"
         },
         "nl.x-services.plugins.launchmyapp": {
             "URL_SCHEME": "donghang",
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.nclab.donghaeng"
+        },
+        "org.apache.cordova.contacts": {
+            "PACKAGE_NAME": "com.nclab.donghaeng"
         }
     },
     "dependent_plugins": {}

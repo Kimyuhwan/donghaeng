@@ -25,12 +25,24 @@ angular.module('starter', ['ionic', 'ngCordova', 'ionic-material', 'starter.cont
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
+
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    //PushBots
+    var PUSHBOTS_APP_ID = "55dfb9e3177959ff558b456b";
+    if(PushbotsPlugin.isAndroid()){
+        var GCM_SENDER_ID = "976553959318";
+        PushbotsPlugin.initializeAndroid(PUSHBOTS_APP_ID, GCM_SENDER_ID);
+    }
+    // set iOS
+    if(PushbotsPlugin.isiOS()){
+        PushbotsPlugin.initializeiOS(PUSHBOTS_APP_ID);
+    }
+
   });
 })
 
