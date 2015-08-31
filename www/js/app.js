@@ -16,7 +16,7 @@ var handleOpenURL = function(url) {
 
 angular.module('starter', ['ionic', 'ngCordova', 'ionic-material', 'starter.controllers', 'starter.services', 'angular-mapbox','cordovaDeviceMotionModule', 'ionMdInput', 'ionMdInputDisabled', 'ngNotificationsBar'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $localstorage) {
   // set initial global variables
 
   $ionicPlatform.ready(function() {
@@ -36,12 +36,15 @@ angular.module('starter', ['ionic', 'ngCordova', 'ionic-material', 'starter.cont
     var PUSHBOTS_APP_ID = "55dfb9e3177959ff558b456b";
     if(PushbotsPlugin.isAndroid()){
         var GCM_SENDER_ID = "976553959318";
-        PushbotsPlugin.initializeAndroid(PUSHBOTS_APP_ID, GCM_SENDER_ID);
+        PushbotsPlugin.initializeAndroid(PUSHBOTS_APP_ID, GCM_SENDER_ID, function() {
+            PushbotsPlugin.getToken(function(token){
+                $localstorage.setPushToken(token);
+            });
+        });
     }
     // set iOS
     if(PushbotsPlugin.isiOS()){
         PushbotsPlugin.initializeiOS(PUSHBOTS_APP_ID);
-        PushbotsPlugin.resetBadge();
     }
 
   });

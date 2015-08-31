@@ -22,6 +22,15 @@ angular.module('starter.services', [])
     },
     deleteToken: function() {
       $window.localStorage.removeItem('TOKEN');
+    },
+    setPushToken: function(token) {
+      $window.localStorage['PUSH_TOKEN'] = token;
+    },
+    getPushToken: function() {
+      return $window.localStorage['PUSH_TOKEN'];
+    },
+    deletePushToken: function() {
+      $window.localStorage.removeItem('PUSH_TOKEN');
     }
   }
 }])

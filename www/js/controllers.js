@@ -124,10 +124,12 @@ angular.module('starter.controllers', [])
 
         if($scope.result_valid) {
             // make sign up body
+            var push_token = $localstorage.getPushToken();
             var body = {
                 id: $scope.user_id,
                 nickname: $scope.user_nick_name,
-                password: $scope.user_password
+                password: $scope.user_password,
+                push_token: push_token
             };
             console.log(body);
 
@@ -202,9 +204,12 @@ angular.module('starter.controllers', [])
         // if valid
         if($scope.result_valid) {
             // make sign up body
+            var push_token = $localstorage.getPushToken();
+
             var body = {
                 id: $scope.user_id,
-                password: $scope.user_password
+                password: $scope.user_password,
+                push_token: push_token
             };
 
             console.log(body);

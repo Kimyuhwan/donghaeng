@@ -7,9 +7,9 @@ var PushbotsPlugin = {
     },
 
 
-    initializeAndroid: function(appId, sender_id) {
+    initializeAndroid: function(appId, sender_id, success) {
 		if(this.isAndroid()){
-			cordova.exec( this.success, this.fail, 'PushbotsPlugin', 'initializeWithAppIdAndSenderId', [appId, sender_id] );
+			cordova.exec( success, this.fail, 'PushbotsPlugin', 'initializeWithAppIdAndSenderId', [appId, sender_id] );
 		}
     },
 
