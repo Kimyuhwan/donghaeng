@@ -41,6 +41,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ionic-material', 'starter.cont
     // set iOS
     if(PushbotsPlugin.isiOS()){
         PushbotsPlugin.initializeiOS(PUSHBOTS_APP_ID);
+        PushbotsPlugin.resetBadge();
     }
 
   });
